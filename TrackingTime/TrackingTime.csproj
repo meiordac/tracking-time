@@ -220,6 +220,14 @@
     <Compile Include="Migrations\201611141836273_removesInitilizeMethods.Designer.cs">
       <DependentUpon>201611141836273_removesInitilizeMethods.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611141950054_changestoModelsAddRelations.cs" />
+    <Compile Include="Migrations\201611141950054_changestoModelsAddRelations.Designer.cs">
+      <DependentUpon>201611141950054_changestoModelsAddRelations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611142019568_changesPhoneforEmail.cs" />
+    <Compile Include="Migrations\201611142019568_changesPhoneforEmail.Designer.cs">
+      <DependentUpon>201611142019568_changesPhoneforEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -348,6 +356,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611141836273_removesInitilizeMethods.resx">
       <DependentUpon>201611141836273_removesInitilizeMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141950054_changestoModelsAddRelations.resx">
+      <DependentUpon>201611141950054_changestoModelsAddRelations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611142019568_changesPhoneforEmail.resx">
+      <DependentUpon>201611142019568_changesPhoneforEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using TrackingTime.DAL;
 using TrackingTime.Models;
 
@@ -49,6 +50,8 @@ namespace TrackingTime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TimeActivityId,ProjectId,Username,WorkType,Description,StartDateTime,FinishDateTime")] TimeActivity timeActivity)
         {
+            timeActivity.Username = User.Identity.GetUserName();
+
             if (ModelState.IsValid)
             {
                 db.TimeActivities.Add(timeActivity);
