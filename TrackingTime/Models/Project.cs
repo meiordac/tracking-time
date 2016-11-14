@@ -7,17 +7,11 @@ namespace TrackingTime.Models
 {
     public class Project
     {
-        public Project(string title, string customer, DateTime deadline, string status)
-        {
-            Title = title;
-            Customer = customer;
-            Deadline = deadline;
-            Status = status;
-        }
 
-        public string Title { get; }
-        public string Customer { get; }
-        public DateTime Deadline { get; }
-        public string Status { get; }
+        public int ProjectId { get; set; }
+        public int CustomerId { get; set; }
+        public string Title { get; set; }
+        public DateTime Deadline { get; set; }
+        public string Status { get; set; }
     }
 }

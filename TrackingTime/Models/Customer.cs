@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,17 +8,12 @@ namespace TrackingTime.Models
 {
     public class Customer
     {
-        public string Name { get; }
-        public string Contact { get; }
-        public string Phone { get; }
-        public string Status { get; }
+        [Key]
+        public int CustomerId { get; set; }
+        public string Name { get; set; }
+        public string Contact { get; set; }
+        public string Phone { get; set; }
+        public string Status { get; set; }
 
-        public Customer(string name, string contact, string phone, string status)
-        {
-            Name = name;
-            Contact = contact;
-            this.Phone = phone;
-            this.Status = status;
-        }
     }
 }
