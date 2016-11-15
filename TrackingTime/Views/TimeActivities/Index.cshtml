@@ -11,6 +11,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    <thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProjectId)
@@ -32,33 +33,35 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartDateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FinishDateTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TimeActivityId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TimeActivityId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TimeActivityId })
-        </td>
-    </tr>
-}
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDateTime)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TimeActivityId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TimeActivityId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TimeActivityId })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

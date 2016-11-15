@@ -8,4 +8,6 @@
         toolbarPlacement: 'top',
         stepping: 15
     });
+
+    $('.table').DataTable();
 })

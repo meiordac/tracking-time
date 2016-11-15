@@ -13,8 +13,16 @@ namespace TrackingTime.Models
         public int CustomerId { get; set; }
         public string Title { get; set; }
         public DateTime Deadline { get; set; }
-        public string Status { get; set; }
+        public Status Status { get; set; }
 
         public virtual Customer Customer { get; set; }
+    }
+
+    public enum Status
+    {
+        Proposed = 1,
+        Active = 2,
+        Completed = 3,
+        Canceled = 4
     }
 }

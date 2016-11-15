@@ -15,14 +15,14 @@ namespace TrackingTime.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "A business web application for keeping track of hours spent on a project with the ability to handle multiple resources as well as multiple projects.";
+            ViewBag.Message = "Time Tracking Web Application";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact our developer.";
 
             return View();
         }

@@ -27,11 +27,14 @@ namespace TrackingTime
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Scripts/bootstrap-datetimepicker.css",
+                      "~/Content/bootstrap-datetimepicker.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
-                "~/Scripts/main.js"));
+                "~/Scripts/main.js",
+                "~/Scripts/DataTables/jquery.dataTables.js",
+                "~/Scripts/DataTables/dataTables.bootstrap.js"));
         }
     }
 }
