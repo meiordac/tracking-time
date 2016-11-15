@@ -1,0 +1,81 @@
+﻿@model TrackingTime.Models.Report
+@using System.Globalization
+@using Chart.Mvc.ComplexChart;
+@using Chart.Mvc.Extensions
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var thechart = new LineChart();
+    thechart.ComplexData.Labels.AddRange(DateTimeFormatInfo.InvariantInfo.MonthNames);
+    thechart.ComplexData.Datasets.AddRange(new List<ComplexDataset>
+                           {
+                              new ComplexDataset
+                                  {
+                                      Data = Model.Activities.GroupBy(x=>x.FinishDateTime.Month).Select(y=> (double) y.Count()).ToList(),
+                                      Label = "Tracking activities each month",
+                                      FillColor = "rgba(151,187,205,0.2)",
+                                      StrokeColor = "rgba(151,187,205,1)",
+                                      PointColor = "rgba(151,187,205,1)",
+                                      PointStrokeColor = "#fff",
+                                      PointHighlightFill = "#fff",
+                                      PointHighlightStroke = "rgba(151,187,205,1)",
+                                  }
+                          });
+
+    var durationchart = new LineChart();
+    durationchart.ComplexData.Labels.AddRange(DateTimeFormatInfo.InvariantInfo.MonthNames);
+    durationchart.ComplexData.Datasets.AddRange(new List<ComplexDataset>
+                           {
+                              new ComplexDataset
+                                  {
+                                      Data = Model.Activities.Select(x=> (double) x.FinishDateTime.Subtract(x.StartDateTime).Minutes).ToList(),
+                                      Label = "Tracking durations of each activity",
+                                      FillColor = "rgba(151,187,205,0.2)",
+                                      StrokeColor = "rgba(151,187,205,1)",
+                                      PointColor = "rgba(151,187,205,1)",
+                                      PointStrokeColor = "#fff",
+                                      PointHighlightFill = "#fff",
+                                      PointHighlightStroke = "rgba(151,187,205,1)",
+                                  }
+                          });
+
+
+}
+
+<h2>Reports</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Activities by month
+                </h3>
+            </div>
+            <div class="panel-body">
+                <canvas id="activities" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Durations by month
+                </h3>
+            </div>
+            <div class="panel-body">
+                <canvas id="duration" width="400" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    @Html.CreateChart("activities", thechart)
+    @Html.CreateChart("duration", durationchart)
+}

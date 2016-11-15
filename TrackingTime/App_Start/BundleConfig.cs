@@ -32,9 +32,11 @@ namespace TrackingTime
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
-                "~/Scripts/main.js",
                 "~/Scripts/DataTables/jquery.dataTables.js",
-                "~/Scripts/DataTables/dataTables.bootstrap.js"));
+                "~/Scripts/DataTables/dataTables.bootstrap.js",
+                "~/Scripts/main.js",
+                "~/Scripts/Chart.js"
+                ));
         }
     }
 }

@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Chart.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Chart.Mvc.1.0.0.2\lib\net45\Chart.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -203,6 +207,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\TimeActivitiesController.cs" />
     <Compile Include="DAL\TrackerContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,6 +232,10 @@
     <Compile Include="Migrations\201611142019568_changesPhoneforEmail.cs" />
     <Compile Include="Migrations\201611142019568_changesPhoneforEmail.Designer.cs">
       <DependentUpon>201611142019568_changesPhoneforEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611151745537_modifiedReports.cs" />
+    <Compile Include="Migrations\201611151745537_modifiedReports.Designer.cs">
+      <DependentUpon>201611151745537_modifiedReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -420,6 +429,7 @@
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
@@ -564,6 +574,8 @@
     <Content Include="Views\Projects\Details.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Reports\Details.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -589,6 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611142019568_changesPhoneforEmail.resx">
       <DependentUpon>201611142019568_changesPhoneforEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611151745537_modifiedReports.resx">
+      <DependentUpon>201611151745537_modifiedReports.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

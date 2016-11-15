@@ -23,5 +23,7 @@ namespace TrackingTime.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<TrackingTime.Models.Report> Reports { get; set; }
     }
 }

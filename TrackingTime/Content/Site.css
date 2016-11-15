@@ -38,3 +38,7 @@ textarea {
     height: 450px;
 }
 
+canvas {
+  width: 100%;
+  height: auto;
+}
