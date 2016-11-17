@@ -23,20 +23,13 @@ textarea {
     max-width: 280px;
 }
 
-.image-bg-fluid-height,
-.image-bg-fixed-height {
-    text-align: center;
+.img-header {
+    background-repeat:no-repeat;
+    background-position:center;
+    padding: 120px;
+    width: auto;
 }
 
-.image-bg-fluid-height {
-	background: url('/Content/images/time.jpg') no-repeat center center scroll;
-    padding: 100px 0;
-}
-
-.image-bg-fixed-height {
-	background: url('/Content/images/time.jpg') no-repeat center center scroll;
-    height: 450px;
-}
 
 canvas {
   width: 100%;

@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
+using TrackingTime.Migrations;
 using TrackingTime.Models;
 
 namespace TrackingTime.DAL
@@ -13,6 +14,7 @@ namespace TrackingTime.DAL
 
         public TrackerContext() : base("TrackerContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TrackerContext, Configuration>());
         }
 
         public DbSet<Customer> Customers { get; set; }
