@@ -8,7 +8,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     var thechart = new LineChart();
-    thechart.ComplexData.Labels.AddRange(DateTimeFormatInfo.InvariantInfo.MonthNames);
+    //thechart.ComplexData.Labels.AddRange(DateTimeFormatInfo.InvariantInfo.MonthNames);
+    thechart.ComplexData.Labels.AddRange(Model.Activities.GroupBy(x => x.FinishDateTime.ToString("MMMM")).Select(y=>y.Key));
     thechart.ComplexData.Datasets.AddRange(new List<ComplexDataset>
                            {
                               new ComplexDataset
@@ -25,12 +26,12 @@
                           });
 
     var durationchart = new LineChart();
-    durationchart.ComplexData.Labels.AddRange(DateTimeFormatInfo.InvariantInfo.MonthNames);
+    durationchart.ComplexData.Labels.AddRange(Model.Activities.GroupBy(x => x.FinishDateTime.ToString("MMMM")).Select(y => y.Key));
     durationchart.ComplexData.Datasets.AddRange(new List<ComplexDataset>
                            {
                               new ComplexDataset
                                   {
-                                      Data = Model.Activities.Select(x=> (double) x.FinishDateTime.Subtract(x.StartDateTime).Minutes).ToList(),
+                                      Data = Model.Activities.GroupBy(y=>y.FinishDateTime.Month).Select(gp => (double) gp.Sum(z=> z.FinishDateTime.Subtract(z.StartDateTime).TotalHours) ).ToList(),
                                       Label = "Tracking durations of each activity",
                                       FillColor = "rgba(151,187,205,0.2)",
                                       StrokeColor = "rgba(151,187,205,1)",
@@ -51,7 +52,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Activities by month
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Number of tracked activities by month
                 </h3>
             </div>
             <div class="panel-body">
@@ -64,7 +65,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Durations by month
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Hours tracked by month
                 </h3>
             </div>
             <div class="panel-body">
