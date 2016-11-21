@@ -11,6 +11,7 @@ using TrackingTime.Models;
 
 namespace TrackingTime.Controllers
 {
+    [Authorize]
     public class CustomersController : Controller
     {
         private TrackerContext db = new TrackerContext();

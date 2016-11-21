@@ -29,11 +29,16 @@ namespace TrackingTime
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-datetimepicker.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css",
+                      "~/Content/DataTables/css/buttons.bootstrap.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
                 "~/Scripts/DataTables/jquery.dataTables.js",
                 "~/Scripts/DataTables/dataTables.bootstrap.js",
+                "~/Scripts/DataTables/dataTables.buttons.min.js",
+                "~/Scripts/jszip.min.js",
+                "~/Scripts/DataTables/buttons.bootstrap.min.js",
+                "~/Scripts/DataTables/buttons.html5.min.js",
                 "~/Scripts/main.js",
                 "~/Scripts/Chart.js"
                 ));

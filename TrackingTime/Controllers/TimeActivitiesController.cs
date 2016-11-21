@@ -12,6 +12,7 @@ using TrackingTime.Models;
 
 namespace TrackingTime.Controllers
 {
+    [Authorize]
     public class TimeActivitiesController : Controller
     {
         private TrackerContext db = new TrackerContext();
